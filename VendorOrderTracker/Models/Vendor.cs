@@ -15,17 +15,23 @@ namespace VendorOrderTracker.Models
       
     }
 
-    public static Vendor Search(string name)
+    public static List<Vendor> Search(string name)
     {
+      List<Vendor> searchedVendors = new List<Vendor> {};
       foreach(Vendor vendor in _instances)
       {
         if(vendor.Name.Contains(name))
         {
-          
+          searchedVendors.Add(vendor);
         }
       }
-      Vendor vendor = "Suzie";
-      return vendor;
+      
+      return searchedVendors;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }
