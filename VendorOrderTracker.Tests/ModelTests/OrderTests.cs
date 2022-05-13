@@ -17,9 +17,8 @@ namespace VendorOrderTracker.Tests
     public void Cost_CalculatesTheCostOfTheOrderBasedOnUnitPrice_Int()
     {
       Order newOrder = new Order("Sourdough", "Sliced loaf", 1, 5);
-      int price = newOrder.CalcCost();
 
-      Assert.AreEqual(5, price);
+      Assert.AreEqual(5, newOrder.Cost);
     }
   }
 

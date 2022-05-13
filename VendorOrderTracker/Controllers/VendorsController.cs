@@ -23,15 +23,19 @@ namespace VendorOrderTracker.Controllers
       [HttpGet("/vendors/{name}")]
       public ActionResult Show(string name)
       {
-        List<Vendor> allVendors = Vendor.GetAll();
+        
         Vendor foundVendor = Vendor.Find(name);
         return View(foundVendor);
       }
 
-      [HttpPost("/vendors/{name}/orders")]
-      public ActionResult Create(string name, string description, int quantity, int unitPrice)
+      [HttpPost("/vendors/{vendorName}/orders")]
+      public ActionResult Create(string vendorName, string name, string description, int quantity, int unitPrice)
       {
-        return RedirectToAction("Show");
+        Order newOrder = new Order(name, description, quantity, unitPrice);
+
+        Vendor foundVendor = Vendor.Find(vendorName);
+        foundVendor.Orders.Add(newOrder);
+        return RedirectToAction("Show", new { name = vendorName });
       }
     }
 }

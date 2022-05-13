@@ -16,14 +16,13 @@ namespace VendorOrderTracker.Models
       Description = description;
       Quantity = quantity;
       UnitPrice = unitPrice;
+      Cost = quantity * unitPrice;
     }
 
-    public int CalcCost()
-    {
-      Cost = Quantity * UnitPrice;
-
-      return Cost;
-    }
+    // public void CalcCost()
+    // {
+    //   Cost = Quantity * UnitPrice;
+    // }
 
   }
 }
