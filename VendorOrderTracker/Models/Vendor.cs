@@ -37,12 +37,12 @@ namespace VendorOrderTracker.Models
 
     public static Vendor Find(string vendorName)
     {
-      int elementIndex = _instances.IndexOf(vendor);
+      int elementIndex = 0;
       foreach(Vendor vendor in _instances)
       {
-        if(vendor.Name == name)
+        if(vendor.Name == vendorName)
           {
-            foundVendors.Add(vendor);
+            elementIndex = _instances.IndexOf(vendor);
           }
       }
       return _instances[elementIndex];

@@ -104,9 +104,9 @@ namespace VendorOrderTracker.Tests
       Vendor newVendor1 = new Vendor("Suzie's Cafe");
       Vendor newVendor2 = new Vendor("Suzie's Second Cafe");
       Vendor newVendor3 = new Vendor("Pierre Duex");
-      Vendor foundVendor = Vendor.Find(newVendor2);
+      Vendor foundVendor = Vendor.Find("Suzie's Cafe");
 
-      Assert.AreEqual(newVendor2, foundVendor);
+      Assert.AreEqual(newVendor1, foundVendor);
     }
   }
 }

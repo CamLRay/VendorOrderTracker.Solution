@@ -20,11 +20,11 @@ namespace VendorOrderTracker.Controllers
         return RedirectToAction("Index");
       }
 
-      [HttpGet("/vendors/{vendor}")]
-      public ActionResult Show(Vendor vendor)
+      [HttpGet("/vendors/{vendorName}")]
+      public ActionResult Show(string vendorName)
       {
         List<Vendor> allVendors = Vendor.GetAll();
-        Vendor foundVendor = Vendor.Find(vendor);
+        Vendor foundVendor = Vendor.Find(vendorName);
         return View(foundVendor);
       }
 
