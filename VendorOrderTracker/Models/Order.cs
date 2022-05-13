@@ -8,17 +8,19 @@ namespace VendorOrderTracker.Models
     public string Description { get; set; }
     public int Quantity { get; set; }
     public int Cost { get; set; }
+    public int UnitPrice { get; set; } 
 
-    public Order(string title, string description, int quantity)
+    public Order(string title, string description, int quantity, int unitPrice)
     {
       Title = title;
       Description = description;
       Quantity = quantity;
+      UnitPrice = unitPrice;
     }
 
-    public int CalcCost(int unitPrice)
+    public int CalcCost()
     {
-      Cost = Quantity * unitPrice;
+      Cost = Quantity * UnitPrice;
 
       return Cost;
     }

@@ -35,6 +35,16 @@ namespace VendorOrderTracker.Models
       _instances.Clear();
     }
 
+    public int Production()
+    {
+      int totalProd = 0;
+      foreach(Order order in Orders)
+      {
+        totalProd += order.CalcCost();
+      }
+      return totalProd;
+    }
+
     public static List<Vendor> GetAll()
     {
       return _instances;
