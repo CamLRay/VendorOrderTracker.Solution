@@ -35,9 +35,9 @@ namespace VendorOrderTracker.Models
       _instances.Clear();
     }
 
-    // public void AddOrder(Order order)
-    // {
-    //   Orders.Add(order);
-    // }
+    public static List<Vendor> GetAll()
+    {
+      return _instances;
+    }
   }
 }
