@@ -1,6 +1,21 @@
 @{
   Layout = "_Layout";
 }
+@using VendorOrderTracker.Models;
 
-<h1>@Model.Name</h1>
+<div class="countainer">
+  <h1>@Model.Name's Orders</h1>
+  <ul>
+  @foreach(Order order in Model.Orders)
+  {
+    <li>@order.Name, @order.Quantity, @order.Cost </li>
+  }
+  </ul>
+  <h3><a href="/orders/@Model.Name">Add orders</a></h3>
+  
+</div>
+
+
+
+
 

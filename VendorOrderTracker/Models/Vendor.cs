@@ -10,10 +10,7 @@ namespace VendorOrderTracker.Models
     public List<Order> Orders { get; set; }
     public int Production { get; set; }
 
-    public Vendor()
-    {
-
-    }
+    
     public Vendor(string name)
     {
       Name = name;
