@@ -85,16 +85,28 @@ namespace VendorOrderTracker.Tests
     }
 
     [TestMethod]
-    public void Production_ProductionFromVendor_int()
+    public void CalcProduction_ProductionFromVendor_int()
     {
       Vendor newVendor = new Vendor("Suzie's Cafe");
       Order newOrder = new Order("Sourdough", "Sliced loaf", 1, 5);
       Order newOrder2 = new Order("Rye", "Sliced loaf", 1, 3);
       newVendor.Orders.Add(newOrder);
       newVendor.Orders.Add(newOrder2);
-      int production = newVendor.Production();
+      newVendor.CalcProduction();
+      int production = newVendor.Production;
 
       Assert.AreEqual(8, production);
+    }
+
+    [TestMethod]
+    public void Find_FindVendorInVendorList_Vendor()
+    {
+      Vendor newVendor1 = new Vendor("Suzie's Cafe");
+      Vendor newVendor2 = new Vendor("Suzie's Second Cafe");
+      Vendor newVendor3 = new Vendor("Pierre Duex");
+      Vendor foundVendor = Vendor.Find(newVendor2);
+
+      Assert.AreEqual(newVendor2, foundVendor);
     }
   }
 }

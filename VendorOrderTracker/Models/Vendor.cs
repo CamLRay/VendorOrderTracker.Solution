@@ -8,7 +8,12 @@ namespace VendorOrderTracker.Models
     private static List<Vendor> _instances = new List<Vendor> {};
     public string Name { get; set; }
     public List<Order> Orders { get; set; }
+    public int Production { get; set; }
 
+    public Vendor()
+    {
+
+    }
     public Vendor(string name)
     {
       Name = name;
@@ -30,19 +35,32 @@ namespace VendorOrderTracker.Models
       return searchedVendors;
     }
 
+    public static Vendor Find(string vendorName)
+    {
+      int elementIndex = _instances.IndexOf(vendor);
+      foreach(Vendor vendor in _instances)
+      {
+        if(vendor.Name == name)
+          {
+            foundVendors.Add(vendor);
+          }
+      }
+      return _instances[elementIndex];
+    }
+
     public static void ClearAll()
     {
       _instances.Clear();
     }
 
-    public int Production()
+    public void CalcProduction()
     {
-      int totalProd = 0;
+      
       foreach(Order order in Orders)
       {
-        totalProd += order.CalcCost();
+        Production += order.CalcCost();
       }
-      return totalProd;
+      
     }
 
     public static List<Vendor> GetAll()
