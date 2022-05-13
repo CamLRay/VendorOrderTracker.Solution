@@ -14,5 +14,18 @@ namespace VendorOrderTracker.Models
       _instances.Add(this);
       
     }
+
+    public static Vendor Search(string name)
+    {
+      foreach(Vendor vendor in _instances)
+      {
+        if(vendor.Name.Contains(name))
+        {
+          
+        }
+      }
+      Vendor vendor = "Suzie";
+      return vendor;
+    }
   }
 }
