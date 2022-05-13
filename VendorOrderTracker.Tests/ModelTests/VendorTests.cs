@@ -55,8 +55,17 @@ namespace VendorOrderTracker.Tests
       tempList.Add(newVendor2);
       List<Vendor> resultList = Vendor.Search("Suzie");
       
-
       CollectionAssert.AreEqual(tempList, resultList);
+    }
+
+    [TestMethod]
+    public void AddOrder_AddsOrderToVendorOrderList_List()
+    {
+      Vendor newVendor = new Vendor("Suzie's Cafe");
+      Order newOrder = new Order("Sourdough", "Sliced loaf", 1);
+      newVendor.Orders.Add(newOrder);
+
+      Assert.AreEqual(newVendor.Orders[0], newOrder);
     }
   }
 }

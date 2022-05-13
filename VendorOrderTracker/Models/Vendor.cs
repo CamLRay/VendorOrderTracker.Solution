@@ -1,18 +1,19 @@
 using System.Collections.Generic;
 
+
 namespace VendorOrderTracker.Models
 {
   public class Vendor
   {
     private static List<Vendor> _instances = new List<Vendor> {};
     public string Name { get; set; }
-    
+    public List<Order> Orders { get; set; }
 
     public Vendor(string name)
     {
       Name = name;
       _instances.Add(this);
-      
+      Orders = new List<Order> {};
     }
 
     public static List<Vendor> Search(string name)
@@ -33,5 +34,10 @@ namespace VendorOrderTracker.Models
     {
       _instances.Clear();
     }
+
+    // public void AddOrder(Order order)
+    // {
+    //   Orders.Add(order);
+    // }
   }
 }
