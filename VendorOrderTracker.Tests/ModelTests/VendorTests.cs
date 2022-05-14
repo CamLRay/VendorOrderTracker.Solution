@@ -92,7 +92,7 @@ namespace VendorOrderTracker.Tests
       Order newOrder2 = new Order("Rye", "Sliced loaf", 1, 3);
       newVendor.Orders.Add(newOrder);
       newVendor.Orders.Add(newOrder2);
-      newVendor.CalcProduction();
+      Vendor.CalcProduction();
       int production = newVendor.Production;
 
       Assert.AreEqual(8, production);

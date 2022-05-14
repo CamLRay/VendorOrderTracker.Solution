@@ -10,6 +10,7 @@ namespace VendorOrderTracker.Controllers
       public ActionResult Index()
       {
         List<Vendor> allVendors = Vendor.GetAll();
+        Vendor.CalcProduction();
         return View(allVendors);
       }
 
@@ -35,7 +36,7 @@ namespace VendorOrderTracker.Controllers
 
         Vendor foundVendor = Vendor.Find(vendorName);
         foundVendor.Orders.Add(newOrder);
-        return RedirectToAction("Show", new { name = vendorName });
+        return View("Show", foundVendor);
       }
     }
 }

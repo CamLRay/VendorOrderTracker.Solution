@@ -50,13 +50,17 @@ namespace VendorOrderTracker.Models
       _instances.Clear();
     }
 
-    public void CalcProduction()
+    public static void CalcProduction()
     {
-      
-      foreach(Order order in Orders)
+      foreach(Vendor vendor in _instances)
       {
-        Production += order.Cost;
+        vendor.Production = 0;
+          foreach(Order order in vendor.Orders)
+        {
+          vendor.Production += order.Cost;
+        }
       }
+      
       
     }
 
