@@ -13,3 +13,12 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.margin {
+  margin: 3px;
+}
+
+.splash {
+  width: 100%;
+  text-align: center;
+}

@@ -75,10 +75,5 @@ namespace VendorOrderTracker.Models
       return _instances;
     }
 
-    // public void AddOrder(Order order)
-    // {
-    //   order.CalcCost();
-    //   Orders.Add(order);
-    // }
   }
 }

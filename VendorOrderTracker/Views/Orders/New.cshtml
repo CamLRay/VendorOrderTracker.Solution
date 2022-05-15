@@ -1,13 +1,32 @@
 @{
   Layout = "_Layout";
 }
-<h1>Add an Oder to @Model.Name</h1>
-<!-- string description, int quantity, int unitPrice -->
-<form action="/vendors/@Model.Name/orders" method="post">
-<input type="text" id="name" name="name" placeholder="Enter Order Title">
-<textarea rows="4" cols="50" id="description" name="description" placeholder="Enter Order description"></textarea>
-<input type="text" name="date" id="date" placeholder="Fulfillment Date">
-<input type="number" id="quantity" name="quantity" placeholder="Quantity">
-<input type="number" id="unitPrice" name="unitPrice" placeholder="Enter Unit Price">
-<button type="submit">Add Order</button>
-</form>
+<div class="container">
+  <h1>Add an Oder to @Model.Name</h1>
+  <!-- string description, int quantity, int unitPrice -->
+  <form action="/vendors/@Model.Name/orders" method="post">
+    <div class="form-group">
+      <label for="name">Title</label><br>
+      <input type="text" id="name" name="name" placeholder="Enter Order Title" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Notes</label><br>
+      <textarea rows="4" cols="50" id="description" name="description" placeholder="Enter Order description"></textarea>
+    </div>
+    <div class="form-row">
+      <div class="margin">
+        <label for="quantity">Quantity</label><br>
+        <input type="number" id="quantity" name="quantity" placeholder="Quantity" required>
+      </div>
+      <div class="margin">
+        <label for="unitPrice">Unit Cost</label><br>
+        <input type="number" id="unitPrice" name="unitPrice" placeholder="Enter Unit Price" required>
+      </div>
+      <div class="margin">
+        <label for="date">Fulfillment Date</label><br>
+        <input type="text" name="date" id="date" placeholder="Fulfillment Date" required>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Add Order</button>
+  </form>
+</div>
