@@ -4,11 +4,15 @@
 @using VendorOrderTracker.Models;
 
 <div class="countainer">
-  <h1>@Model.Name's Orders</h1>
+  <h1>@Model.Name</h1>
+  <h5>Vendor Description:</h5>
+  <p>@Model.Description</p>
+
+  <h5>Orders</h5>
   <ul>
   @foreach(Order order in Model.Orders)
   {
-    <li>@order.Name, @order.Quantity, @order.Cost </li>
+    <li>@order.Name, @order.Quantity, @order.Cost, @order.Date </li>
   }
   </ul>
   <h3><a href="/orders/@Model.Name">Add Order</a></h3>

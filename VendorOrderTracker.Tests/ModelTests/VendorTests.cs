@@ -78,7 +78,7 @@ namespace VendorOrderTracker.Tests
     public void AddOrder_AddsOrderToVendorOrderList_List()
     {
       Vendor newVendor = new Vendor("Suzie's Cafe");
-      Order newOrder = new Order("Sourdough", "Sliced loaf", 1, 5);
+      Order newOrder = new Order("Sourdough", "Sliced loaf", 1, "May,15", 5);
       newVendor.Orders.Add(newOrder);
 
       Assert.AreEqual(newVendor.Orders[0], newOrder);
@@ -88,8 +88,8 @@ namespace VendorOrderTracker.Tests
     public void CalcProduction_ProductionFromVendor_int()
     {
       Vendor newVendor = new Vendor("Suzie's Cafe");
-      Order newOrder = new Order("Sourdough", "Sliced loaf", 1, 5);
-      Order newOrder2 = new Order("Rye", "Sliced loaf", 1, 3);
+      Order newOrder = new Order("Sourdough", "Sliced loaf", 1, "May,15", 5);
+      Order newOrder2 = new Order("Rye", "Sliced loaf", 1, "May,15", 3);
       newVendor.Orders.Add(newOrder);
       newVendor.Orders.Add(newOrder2);
       Vendor.CalcProduction();

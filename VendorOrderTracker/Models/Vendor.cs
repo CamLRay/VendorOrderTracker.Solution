@@ -7,6 +7,7 @@ namespace VendorOrderTracker.Models
   {
     private static List<Vendor> _instances = new List<Vendor> {};
     public string Name { get; set; }
+    public string Description { get; set;}
     public List<Order> Orders { get; set; }
     public int Production { get; set; }
 
@@ -16,6 +17,11 @@ namespace VendorOrderTracker.Models
       Name = name;
       _instances.Add(this);
       Orders = new List<Order> {};
+    }
+
+    public Vendor(string name, string description) : this(name)
+    {
+      Description = description;
     }
 
     public static List<Vendor> Search(string name)

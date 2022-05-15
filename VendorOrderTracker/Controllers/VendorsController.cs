@@ -14,11 +14,11 @@ namespace VendorOrderTracker.Controllers
         return View(allVendors);
       }
 
-      [HttpPost("/vendors")]
-      public ActionResult Create(string name)
+      [HttpGet("/vendors/new")]
+      public ActionResult New()
       {
-        Vendor newVendor = new Vendor(name);
-        return RedirectToAction("Index");
+
+        return View();
       }
 
       [HttpGet("/vendors/{name}")]
@@ -30,9 +30,9 @@ namespace VendorOrderTracker.Controllers
       }
 
       [HttpPost("/vendors/{vendorName}/orders")]
-      public ActionResult Create(string vendorName, string name, string description, int quantity, int unitPrice)
+      public ActionResult Create(string vendorName, string name, string description, int quantity, string date, int unitPrice)
       {
-        Order newOrder = new Order(name, description, quantity, unitPrice);
+        Order newOrder = new Order(name, description, quantity, date, unitPrice);
 
         Vendor foundVendor = Vendor.Find(vendorName);
         foundVendor.Orders.Add(newOrder);
