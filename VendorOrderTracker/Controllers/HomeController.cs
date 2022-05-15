@@ -19,5 +19,17 @@ namespace VendorOrderTracker.Controllers
         return RedirectToAction("Index");
       }
 
+      [HttpPost("/mock")]
+      public ActionResult Create()
+      {
+        Vendor newVendor = new Vendor("Suzie's Cafe", "Small Southern Kitchen");
+        Vendor newVendor1 = new Vendor("Petrucci's Parlor", "New York style pizzaria");
+        Vendor newVendor2 = new Vendor("Debs", "Coffee Shop");
+        Vendor newVendor3 = new Vendor("Donny's", "New England Deli");
+        Vendor newVendor4 = new Vendor("Bob's Burgers", "Smash burgers and more");
+
+        return RedirectToAction("Index");
+      }
+
     }
 }

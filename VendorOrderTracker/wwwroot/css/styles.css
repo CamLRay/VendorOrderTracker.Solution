@@ -1,17 +1,27 @@
+body {
+  background: repeating-linear-gradient( 90deg, #ffd9c8, #ffd9c8 20px, #f1b1ca 20px, #f1b1ca 40px);
+  color: #b85f81;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  text-align: center;
 }
 
 td, th {
-  border: 1px solid #dddddd;
+  border: 2px solid #f177a6;
   text-align: left;
   padding: 8px;
+  
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #f1b1ca;
+}
+tr:nth-child(odd) {
+  background-color: #ffd9c8;
 }
 
 .margin {
@@ -21,4 +31,53 @@ tr:nth-child(even) {
 .splash {
   width: 100%;
   text-align: center;
+}
+
+a:link {
+  color: #b85f81;
+}
+
+a:visited {
+  color: #b85f81;
+}
+
+a:hover {
+  color: #d4056d;
+}
+
+a:active {
+  color: #b85f81;
+}
+
+.title-card {
+  background-color: #ffd9c8;
+  border-bottom: 2px solid #dd6c97;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1%;
+}
+
+.content-box {
+  background-color: #ffd9c8c5;
+  padding: 2%;
+  margin: auto;
+  margin-top: 1%;
+}
+
+.btn-pink {
+  background-color: #eb89ae;
+  color: #f8e1d6;
+}
+
+.btn-pink:hover {
+  background-color: #cc5f89;
+  color: #f8e1d6;
+}
+
+.dev {
+  margin: 2%;
+}
+
+textarea, input {
+  background-color: #ffd9c8;
 }

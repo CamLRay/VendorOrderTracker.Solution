@@ -3,8 +3,14 @@
 }
 @using VendorOrderTracker.Models;
 
+  <div class="title-card splash">
+    <h2>Vendors</h2>
+  </div>
 <div class="container">
-  <h2>Vendors</h2>
+  <form action="/vendors/new" method="get">
+    <button type="submit" class="btn btn-pink">New Vendor</button>
+  </form>
+
   <table>
   <tr>
     <th>Vendor</th>
@@ -24,7 +30,5 @@
   }
   
   </table>
-  
-  <h3><a href="/vendors/new">Click Here to Add a Vendor</a></h3>
 
 </div>

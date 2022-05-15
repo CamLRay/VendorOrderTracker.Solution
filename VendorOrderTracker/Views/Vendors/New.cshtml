@@ -4,13 +4,28 @@
 @using VendorOrderTracker.Models;
 
 
-<div class="container">
-  <h3>Add Vendor</h3>
-  <form action="/" method="post">
-    <label for="name">Vendor Name:</label><br>
-    <input type="text" id="name" name="name" placeholder="Enter Name" required><br>
-    <label for="description">Vendor Description</label><br>
-    <textarea type="text" id="description" rows="4" cols="50" name="description"></textarea><br>
-    <button type="submit">Add Vendor</button>
-  </form>
+<div class="content-box container">
+  <div class="splash">
+    <h3>Add Vendor</h3>
+    <form action="/" method="post">
+      <label for="name">Vendor Name:</label><br>
+      <input type="text" id="name" name="name" placeholder="Enter Name" required><br>
+      <label for="description">Vendor Description</label><br>
+      <textarea type="text" id="description" rows="4" cols="50" name="description"></textarea><br>
+      <button type="submit" class="btn btn-pink">Add Vendor</button>
+    </form>
+  </div>
+ 
+  <a href="/vendors">Return to vendor list</a>
 </div>
+
+
+<!-- For test purposes to see vendor list populated
+Added this for grading convenienc.
+-->
+
+  <div class="dev">
+    <form action="/mock" method="post">
+      <button type="submit" class="btn btn-pink">Populate Vendor List</button>
+    </form>
+  </div>

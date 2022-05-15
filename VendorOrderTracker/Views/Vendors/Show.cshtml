@@ -4,30 +4,39 @@
 @using VendorOrderTracker.Models;
 
 <div class="container">
-  <h1>@Model.Name</h1>
-  <p>@Model.Description</p>
-
-  <h5>Current Orders</h5>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Quantity</th>
-      <th>Price</th>
-      <th>Fulfillment Date</th>
-    </tr>
-  @foreach(Order order in Model.Orders)
-  {
-    <tr>
-      <td>@order.Name</td>
-      <td>@order.Quantity</td>
-      <td>@order.Cost</td>
-      <td>@order.Date </td>
-    </tr>
-    
-  }
-  </table>
-  <h3><a href="/orders/@Model.Name">Add Order</a></h3>
-  <a href="/vendors">Return to vendor list</a>
+  
+  <div class="title-card splash">
+    <h1>@Model.Name</h1>
+    <p>@Model.Description</p>
+  </div>
+  <div class="content-box">
+    <div class="splash">
+      <h5>Current Orders</h5>
+    </div>
+      <form action="/orders/@Model.Name" method="get">
+        <button type="submit" class="btn btn-pink">New Order</button>
+      </form>
+    <div class="splash">
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Fulfillment Date</th>
+        </tr>
+      @foreach(Order order in Model.Orders)
+      {
+        <tr>
+          <td>@order.Name</td>
+          <td>@order.Quantity</td>
+          <td>$@order.Cost</td>
+          <td>@order.Date </td>
+        </tr>
+      }
+      </table>
+    </div>
+    <a href="/vendors">Return to vendor list</a>
+  </div>
 </div>
 
 
